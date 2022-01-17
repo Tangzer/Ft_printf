@@ -5,7 +5,7 @@ NAME = libftprintf.a
 RM = rm -f
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -I./includes
+INCLUDES = ./includes
 OBJS =   ${SRCS:.c=.o}
 
 SRC = src/ft_printf.c
