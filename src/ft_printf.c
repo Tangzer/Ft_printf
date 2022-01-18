@@ -1,4 +1,4 @@
-#include "../includes/ft_printf.h"
+#include "../ft_printf.h"
 
 static int 	ft_input_reader(va_list args, const char *input)
 {
@@ -25,11 +25,24 @@ static int 	ft_input_reader(va_list args, const char *input)
 
 int	ft_printf(const char *input, ...)
 {
-	va_list	args;
+	va_list	ptr;
 	int		char_count;
 
 	char_count = 0;
-	va_start(args, inout);
-	char_count += ft_input_reader(args, input);
-	va_end(args);
+	va_start(ptr, input);
+	char_count += ft_input_reader(ptr, input);
+	va_end(ptr);
+	return (char_count);
+}
+
+
+#include <stdio.h>
+int main(void)
+{
+	int c;
+
+	c = 237;
+	ft_printf("OG one : %d%d%i", c);
+	printf("Real one: %d", c);
+	return (0);
 }

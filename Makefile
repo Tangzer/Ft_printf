@@ -5,21 +5,23 @@ NAME = libftprintf.a
 RM = rm -f
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = ./includes
 OBJS =   ${SRCS:.c=.o}
 
-SRC = src/ft_printf.c
+SRC = src/ft_printf.c\
+      src/ft_type_list.c\
+      src/ft_putchar.c\
+      src/ft_putstr_and_count.c\
+      src/ft_input_type.c\
+      src/ft_print_var.c\
+      src/ft_print_int.c
 
 .c.o:	${SRCS}
 	${CC} ${CFLAGS} -c -o $@ $<
 
 ${NAME}:	${OBJS}
-		ar r $(NAME) ${OBJS} ${INCLUDES}
+		ar -rcs $(NAME) ${OBJS}
 
 all:	${NAME}
-
-bonus:	${OBJS_BONUS}
-		ar r ${NAME}
 
 clean:
 	${RM} ${OBJS}

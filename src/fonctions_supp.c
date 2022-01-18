@@ -1,6 +1,6 @@
-#include "../includes/ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_type_list(char c)
+int	ft_input_type(char c)
 {
 	if (c == 'd' || c == 'i' || c == 'u' || c == 'p' || c == 'x'
 		|| c == 'X' || c == 'c' || c == 's' || c == '%')
@@ -15,7 +15,7 @@ int	ft_putchar(int c)
 	return (1);
 }
 
-int	ft_putstr(char *str)
+int	ft_putstr_and_count(char *str)
 {
 	int	i;
 
