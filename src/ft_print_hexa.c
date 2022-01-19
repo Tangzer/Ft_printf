@@ -5,13 +5,12 @@ static int	hexa_len(unsigned int nb)
 	int i;
 
 	i = 0;
-	while (nb >= 16)
+	if (nb >= 16)
 	{
 		hexa_len(nb = (nb / 16));
 		i++;
 	}
-	i++;
-	return (i);
+	return (++i);
 }
 
 static void ft_hexa(unsigned int nb, char type)
@@ -23,7 +22,7 @@ static void ft_hexa(unsigned int nb, char type)
 	}
 	else
 	{
-		if (nb < 9)
+		if (nb < 10)
 			ft_putchar_fd((nb + '0'), 1);
 		else if (type == 'x')
 			ft_putchar_fd((nb - 10 + 'a'), 1);

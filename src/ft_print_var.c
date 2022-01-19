@@ -15,5 +15,9 @@ int ft_print_var(char type, va_list args)
 //		char_count = ft_print_pourcent();
 	if (type == 'x' || type == 'X')
 		char_count = ft_print_hexa(va_arg(args, unsigned int), type);
+	if (type == 'u')
+		char_count = ft_print_unsigned_int(va_arg(args, unsigned int));
+	if (type == 'p')
+		char_count = ft_print_pointer(va_arg(args, unsigned long long int));
 	return (char_count);
 }

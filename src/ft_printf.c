@@ -41,10 +41,12 @@ int main(void)
 {
 	int c;
 	int d;
+	char *ptr;
 
+	ptr = 0;
 	c = 237;
-	d = ft_printf("OG one : %d %i %c %s %x %X", c, c, 'T', "salut", 450, 450);
-	printf("\nReal one: %d %i %c %s %x %X", c, c, 'T', "salut", 450, 450);
+	d = ft_printf("OG : %d %i %c %s %x %X %u %p", c, c, 'T', "salut", 450, 237, 303, ptr);
+	printf("\nReal one: %d %i %c %s %x %X %u %p", c, c, 'T', "salut", 450, 237, 303, ptr);
 	printf("\nvaleur de d : %d", d);
 	return (d);
 }
