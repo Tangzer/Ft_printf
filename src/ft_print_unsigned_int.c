@@ -1,4 +1,5 @@
 #include "../ft_printf.h"
+#include <stdio.h>
 
 static int ft_len(unsigned int nb)
 {
@@ -7,7 +8,7 @@ static int ft_len(unsigned int nb)
 	i = 0;
 	if (nb >= 10)
 	{
-		ft_len(nb = (nb / 10));
+		nb = (nb / 10);
 		i++;
 	}
 	return (++i);
@@ -30,5 +31,6 @@ int	ft_print_unsigned_int(unsigned int nb)
 
 	ft_print(nb);
 	char_count = ft_len(nb);
+	printf("3 =?= %d", char_count);
 	return (char_count);
 }
