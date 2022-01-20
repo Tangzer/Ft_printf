@@ -1,19 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tverdood <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/20 15:21:22 by tverdood          #+#    #+#             */
+/*   Updated: 2022/01/20 15:21:51 by tverdood         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
-static int	hexa_len(unsigned int nb)
-{
-	int i;
-
-	i = 0;
-	if (nb >= 16)
-	{
-		hexa_len(nb = (nb / 16));
-		i++;
-	}
-	return (++i);
-}
-
-static void ft_hexa(unsigned int nb, char type)
+static void	ft_hexa(unsigned int nb, char type)
 {
 	if (nb >= 16)
 	{
@@ -31,9 +30,9 @@ static void ft_hexa(unsigned int nb, char type)
 	}
 }
 
-int ft_print_hexa(unsigned int nb, char type)
+int	ft_print_hexa(unsigned int nb, char type)
 {
-	int char_count;
+	int	char_count;
 
 	ft_hexa(nb, type);
 	char_count = hexa_len(nb);

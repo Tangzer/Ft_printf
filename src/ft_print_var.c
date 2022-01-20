@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_var.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tverdood <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/20 15:24:25 by tverdood          #+#    #+#             */
+/*   Updated: 2022/01/20 15:24:33 by tverdood         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
-int ft_print_var(char type, va_list args)
+int	ft_print_var(char type, va_list args)
 {
-	int char_count;
+	int	char_count;
 
 	char_count = 0;
 	if (type == 'd' || type == 'i')
@@ -11,8 +23,8 @@ int ft_print_var(char type, va_list args)
 		char_count = ft_print_char(va_arg(args, int));
 	if (type == 's')
 		char_count = ft_print_string(va_arg(args, char *));
-//	if (type == '%')
-//		char_count = ft_print_pourcent();
+	if (type == '%')
+		char_count = ft_print_pourcent();
 	if (type == 'x' || type == 'X')
 		char_count = ft_print_hexa(va_arg(args, unsigned int), type);
 	if (type == 'u')

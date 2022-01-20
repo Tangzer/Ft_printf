@@ -1,12 +1,23 @@
-#include "../ft_printf.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tverdood <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/20 15:24:00 by tverdood          #+#    #+#             */
+/*   Updated: 2022/01/20 15:24:13 by tverdood         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int ft_len(unsigned int nb)
+#include "../ft_printf.h"
+
+static int	ft_len(unsigned int nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if (nb >= 10)
+	while (nb >= 10)
 	{
 		nb = (nb / 10);
 		i++;
@@ -27,10 +38,9 @@ static void	ft_print(unsigned int nb)
 
 int	ft_print_unsigned_int(unsigned int nb)
 {
-	int char_count;
+	int	char_count;
 
 	ft_print(nb);
 	char_count = ft_len(nb);
-	printf("3 =?= %d", char_count);
 	return (char_count);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fonctions_supp.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tverdood <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/20 15:20:57 by tverdood          #+#    #+#             */
+/*   Updated: 2022/01/20 15:20:59 by tverdood         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
 int	ft_input_type(char c)
@@ -28,4 +40,17 @@ int	ft_putstr_and_count(char *str)
 		i++;
 	}
 	return (i);
+}
+
+int	hexa_len(unsigned long long int nb)
+{
+	int	char_count;
+
+	char_count = 0;
+	while (nb >= 16)
+	{
+		nb = (nb / 16);
+		char_count++;
+	}
+	return (++char_count);
 }

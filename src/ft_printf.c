@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tverdood <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/20 15:15:14 by tverdood          #+#    #+#             */
+/*   Updated: 2022/01/20 15:24:59 by tverdood         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
-static int 	ft_input_reader(va_list args, const char *input)
+static int	ft_input_reader(va_list args, const char *input)
 {
-	int i;
-	int char_count;
+	int	i;
+	int	char_count;
 
 	i = 0;
 	char_count = 0;
@@ -31,22 +43,7 @@ int	ft_printf(const char *input, ...)
 
 	char_count = 0;
 	va_start(ptr, input);
-	char_count += ft_input_reader(ptr, input);
+	char_count = ft_input_reader(ptr, input);
 	va_end(ptr);
 	return (char_count);
-}
-
-#include <stdio.h>
-int main(void)
-{
-	int c;
-	int d;
-	char *ptr;
-
-	ptr = 0;
-	c = 237;
-	d = ft_printf("OG : %d %i %c %s %x %X %u %p", c, c, 'T', "salut", 450, 237, 303, ptr);
-	printf("\nReal one: %d %i %c %s %x %X %u %p", c, c, 'T', "salut", 450, 237, 303, ptr);
-	printf("\nvaleur de d : %d", d);
-	return (d);
 }
